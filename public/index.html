@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="module.home">
+
+<head>
+    <title>Pmods</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="/js/module.home.js"></script>
+</head>
+
+<body ng-controller="performanceController as pCtrl">
+    <div>
+        <a href="/auth.html" style="text-decoration: none; text-align: right;">Login</a>
+    </div>
+    <br>
+    <form ng-submit="pCtrl.vehicleRequest()">
+        <!-- Vehicle Search Form -->
+        <select name="cars" ng-model="pCtrl.make" ng-change="pCtrl.carMakeDropdown()">
+            <option value="audi"> Audi</option>
+            <option value="bmw"> BMW</option>
+            <option value="mercedes"> Mercedes</option>
+            <option value="porsche"> Porsche</option>
+            <option value="volkswagen"> Volkswagen</option>
+        </select>
+        <!-- Audi Model List -->
+        <select name="cars" ng-model="pCtrl.model" ng-show="pCtrl.model">
+            <option value="allroad"> Allroad</option>
+            <option value="tt"> TT</option>
+            <option value="s4"> S4</option>
+            <option value="s5"> S5</option>
+            <option value="s6"> S6</option>
+            <option value="s7"> S7</option>
+            <option value="r8"> R8</option>
+            <option value="rs4"> RS4</option>
+            <option value="rs5"> RS5</option>
+            <option value="rs6"> RS6</option>
+            <option value="rs7"> RS7</option>
+        </select>
+        <input type="text" name="model" placeholder="Model" ng-model="pCtrl.model" required="true">
+        <input type="text" name="year" placeholder="Year" ng-model="pCtrl.year" required="true">
+        <!-- <input type="text" name="hp" placeholder="Horsepower" ng-model="pCtrl.horsepower" required="true"> -->
+        <input type="submit">
+    </form>
+    <div ng-show="pCtrl.showVehicleInfo"><img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleInfo.photos[0].sources[0].link.href}}">
+        <!-- Image returned from AJAX request -->
+    </div>
+</body>
+
+</html>
