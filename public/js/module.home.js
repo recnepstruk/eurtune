@@ -22,7 +22,7 @@ function perfControl($http) { //this function does not belong to an object
     pCtrl.vehicleInfo = {};
 
     pCtrl.vehicleRequest = function() {
-        $http.get('/api/myvehicle?make=' + pCtrl.make + '&model=' + pCtrl.model + '&year=' + pCtrl.year)
+        $http.get('/api/myvehicle/photo?make=' + pCtrl.make + '&model=' + pCtrl.model + '&year=' + pCtrl.year)
             .then(function(success) {
                     console.log("Success: ", success.data);
                     pCtrl.make = " ";
@@ -30,6 +30,19 @@ function perfControl($http) { //this function does not belong to an object
                     pCtrl.year = " ";
                     pCtrl.vehicleInfo = success.data;
                     pCtrl.showVehicleInfo = true;
+                    for(var i=0; i < pCtrl.vehicleInfo.photos.length; i++){
+                        var photo = pCtrl.vehicleInfo.photos[i];
+                        console.log('looking for exterior');
+                        if(photo.category == "EXTERIOR" && (photo.shotTypeAbbreviation == "S" || photo.shotTypeAbbreviation == "FQ")){
+                            for(var s=0; s < photo.sources.length; s++){
+                                console.log('looking for big picture!');
+                                if(photo.sources[s].size.width > 400){
+                                    console.log('found picture!');
+                                    pCtrl.vehicleImage = photo.sources[s].link.href;
+                                }
+                            }
+                        }
+                    }
                 },
                 function(error) {
                     console.log("Error: ", error);
@@ -70,6 +83,7 @@ function perfControl($http) { //this function does not belong to an object
 
             }
         }
+        
     }
 
 /************************* hide all model drop downs ************************************/

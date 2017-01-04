@@ -91,7 +91,6 @@ ul.topnav li.icon {
     }
 }
 
-
 .audiImg {
     background-image: url('http://img00.deviantart.net/325d/i/2010/161/7/3/audi_r8_in_dark_by_abaddonvolac.jpg');
     /*position: absolute;*/
@@ -156,6 +155,7 @@ ul.topnav li.icon {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
 a {
     text-decoration: none;
 }

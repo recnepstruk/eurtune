@@ -99,10 +99,6 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <form ng-submit="pCtrl.vehicleRequest()" class="searchForm">
         <p>Select your vehicle</p>
         <!-- Vehicle Make List -->
@@ -145,17 +141,10 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <div id="parts">
         <div ng-show="pCtrl.showVehicleInfo" class="apiImage">
-            <!-- <img src="http://www.blogcdn.com/www.autoblog.com/media/2008/06/vwr32_0408_cjt---20_opt.jpg"> -->
-            <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleInfo.photos[7].sources[0].link.href}}">
+            <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleImage}}">
+            <!-- <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleInfo.photos[7].sources[0].link.href}}"> -->
         </div>
     </div>
     <footer style="text-align: center;">
