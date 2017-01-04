@@ -7,7 +7,7 @@ function myFunction() {
         x.className = "topnav";
     }
 }
-
+/************************* Home Page Controller ************************************/
 angular.module('module.home', [])
     .controller('performanceController', perfControl)
     .controller('module.auth.controller', loginController);
@@ -34,31 +34,52 @@ function perfControl($http) { //this function does not belong to an object
                 function(error) {
                     console.log("Error: ", error);
                 });
-        if("hp" > 100 && "hp" <= 200){
+        if(pCtrl.make == "audi" && pCtrl.model == "a4"){
+            if(pCtrl.year >= 1996 && pCtrl.year <= 2001){        //B5
+                // display parts... 
+                // https://www.ecstuning.com/Audi-B5_A4-Quattro-1.8T/News/Audi_B5_18T_Replacement_Turbo_01032016_21621/
+            } else if(pCtrl.year >= 2002 && pCtrl.year <= 2004){ //B6
+                // display parts...
+                // http://www.modbargains.com/afe-cold-air-intake-stage-2-audi-a4.htm
+            } else if(pCtrl.year >= 2005 && pCtrl.year <= 2008){ //B7
+                // display parts... 
+                // http://www.modbargains.com/AEM-Performance-Intake-Audi-A4.htm    
+            } else if(pCtrl.year >= 2009 && pCtrl.year <= 2015){ //B8
+                // display parts...
+            } else {
+                console.log('Please enter a year after 1995');
+            }
 
-        } else if("hp" > 200 && "hp" <= 300){
+        } else if(pCtrl.make == "bmw" && pCtrl.model == "e46"){
+            // E46 is 1999 to 2005
+            // display parts...
+        } else if(pCtrl.make == "porsche" && pCtrl.model == "911"){
+            if(pCtrl.year >= 1997 && pCtrl.year <= 2003){        //B5
+                // display parts... 
+            } else if(pCtrl.year >= 2004 && pCtrl.year <= 2010){ //B6
+                // display parts...
+            } else if(pCtrl.year >= 2011 && pCtrl.year <= 2015){ //B7
+                // display parts...     
+            } else {
+                console.log('Please enter a year after 1996.');
+            }
+        } else if(pCtrl.make == "volkswagen" && pCtrl.model == "r32"){
+            if(pCtrl.year == 2004){
 
-        } else if("hp" > 300 && "hp" <= 400){
-            
-        } else if("hp" > 400 && "hp" <= 500){
-            
-        } else if("hp" > 500 && "hp" <= 600){
-            
-        } else if("hp" > 700 && "hp" <= 800){
-            
-        } else if("hp" > 800){
-            
+            } else if(pCtrl.year == 2008){
+
+            }
         }
     }
 
-    // hide all model drop downs
+/************************* hide all model drop downs ************************************/
     pCtrl.audiModel = false;
     pCtrl.bmwModel = false;
     pCtrl.porscheModel = false;
     pCtrl.volkswagenModel = false;
     pCtrl.showYear = false;
     pCtrl.showHP = false;
-    // create function to show specific models based on make
+/************************* create function to show specific models based on make *********/
     pCtrl.carMakeDropdown = function() { //this function belongs to an object
         if (pCtrl.make == "audi") {
             pCtrl.audiModel = true;
@@ -88,7 +109,7 @@ function perfControl($http) { //this function does not belong to an object
         pCtrl.showYear = true;
     }
 }
-
+/************************* Login in and Register Controller ************************************/
 function loginController($http) { // window.Auth
     console.info('Auth controller loaded!');
 

@@ -19,13 +19,22 @@
 </head>
 
 <body ng-controller="performanceController as pCtrl">
+<!-- Navigation Menu -->
     <ul class="topnav" id="myTopnav">
         <li><a href="/">Home</a></li>
         <li><a data-toggle="modal" data-target=".bs-example-modal-sm">Login</a></li>
         <li><a data-toggle="modal" data-target=".bs-example-modal-sm2">Register</a></li>
         <li><a href="/about.html">About</a></li>
+        <li><a href="/companies.html">Companies</a></li>
     </ul>
-    <br>
+    <!-- Audi Image & Page Title & Button-->
+    <div style="position: relative;">
+        <img style='width:100%; max-height: 680px;' src="http://img00.deviantart.net/325d/i/2010/161/7/3/audi_r8_in_dark_by_abaddonvolac.jpg">
+        <div id="title">
+            <font size="7">Eur-Tune</font>
+        </div>
+        <button type="submit" class="startBtn">Get Started</button>
+    </div>
     <!-- Login Modal -->
     <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" ng-controller="module.auth.controller as auth">
         <div class="modal-dialog modal-sm" role="document">
@@ -43,7 +52,6 @@
                         </fieldset>
                         <label for="password">Password:</label>
                         <fieldset>
-                            
                             <input required placeholder="Password" type="password" ng-model="auth.payloads.login.password" />
                         </fieldset>
                         <br>
@@ -88,13 +96,15 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-    <!-- Page Title -->
-    <div id="title">
-        <h1>Eur-Tune</h1></div>
     <br>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <form ng-submit="pCtrl.vehicleRequest()" class="searchForm">
-    <p>Select your vehicle & choose your horsepower</p>
+        <p>Select your vehicle</p>
         <!-- Vehicle Make List -->
         <select required="true" name="cars" ng-model="pCtrl.make" ng-change="pCtrl.carMakeDropdown()">
             <option value="" disabled selected>Make</option>
@@ -116,7 +126,7 @@
         <!-- Porsche Model List -->
         <select required="true" name="porsche" ng-model="pCtrl.model" ng-show="pCtrl.porscheModel">
             <option value="" disabled selected>Model</option>
-            <option value="cayenne"> Cayenne</option>
+            <option value="911"> 911</option>
         </select>
         <!-- VW Model List -->
         <select required="true" name="volkswagen" ng-model="pCtrl.model" ng-show="pCtrl.volkswagenModel">
@@ -125,43 +135,29 @@
         </select>
         <!-- Year Input -->
         <input type="text" name="year" placeholder="Year" ng-model="pCtrl.year" required="true" ng-show="pCtrl.showYear">
-        <input type="text" name="hp" placeholder="Horsepower" ng-model="pCtrl.horsepower" required="true" ng-show="pCtrl.showHP">
+        <!--         <input type="text" name="hp" placeholder="Horsepower" ng-model="pCtrl.horsepower" required="true" ng-show="pCtrl.showHP">
+ -->
         <input type="submit">
     </form>
     <!-- Image returned from AJAX request -->
-    <div ng-show="pCtrl.showVehicleInfo">
-        <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleInfo.photos[0].sources[0].link.href}}">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="parts">
+        <div ng-show="pCtrl.showVehicleInfo" class="apiImage">
+            <!-- <img src="http://www.blogcdn.com/www.autoblog.com/media/2008/06/vwr32_0408_cjt---20_opt.jpg"> -->
+            <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleInfo.photos[7].sources[0].link.href}}">
+        </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <footer style="text-align: center;">
         <a href="http://www.edmunds.com/?id=apis">
             <img src="https://open-api.edmunds.com/api/openapi/v1/logo?size=220&format=horizontal&color=gray&api_key=bfgj98v9kdzm7ukyuxf7srtw">

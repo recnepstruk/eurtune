@@ -12,9 +12,9 @@ ul.topnav {
     overflow: hidden;
     background-color: #333;
     border-radius: none;
-    -webkit-box-shadow: 0 4px 4px -2px rgba(0,0,0,0.4);
-    -moz-box-shadow: 0 4px 4px -2px rgba(0,0,0,0.4);
-    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -91,8 +91,13 @@ ul.topnav li.icon {
     }
 }
 
-body {
-    margin: 0;
+
+.audiImg {
+    background-image: url('http://img00.deviantart.net/325d/i/2010/161/7/3/audi_r8_in_dark_by_abaddonvolac.jpg');
+    /*position: absolute;*/
+    width: 1000px;
+    height: 500px;
+    /*background-repeat: no-repeat;    */
 }
 
 
@@ -101,14 +106,33 @@ body {
 #title {
     font-family: 'Audiowide', sans-serif;
     text-shadow: 4px 4px 4px #aaa;
-    text-align: center;
-    margin: 0 auto;
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.startBtn {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .searchForm {
     text-shadow: 4px 4px 4px #aaa;
     text-align: center;
     margin: 0 auto;
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 5px;
+}
+
+.apiImage {
+    position: absolute;
+    z-index: 1;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #about {
@@ -120,6 +144,34 @@ body {
     padding: 10px;
 }
 
+.companyFont {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.companyList {
+    text-decoration: none;
+    border: 1px solid black;
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+a {
+    text-decoration: none;
+}
+
 .modal {
     text-align: center;
+}
+
+#parts {
+    background-color: #cccccc;
+    height: 500px;
+}
+
+footer {
+    background-color: #333;
+    -moz-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
 }

@@ -13,7 +13,7 @@ module.exports = (app) => {
     app.use(express.static('public'));  // home route
 
     var url = "https://api.edmunds.com";   //API home route
-    var APPID = "bfgj98v9kdzm7ukyuxf7srtw" //API key
+    var APPID = process.env.APPID //API key in bash shell
     app.get('/api/myvehicle', (req, res) => { // my made up route
         console.log(req.query.make);
         console.log(req.query.model);
