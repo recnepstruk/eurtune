@@ -19,21 +19,24 @@
 </head>
 
 <body ng-controller="performanceController as pCtrl">
-<!-- Navigation Menu -->
-    <ul class="topnav" id="myTopnav">
-        <li><a href="/">Home</a></li>
-        <li><a data-toggle="modal" data-target=".bs-example-modal-sm">Login</a></li>
-        <li><a data-toggle="modal" data-target=".bs-example-modal-sm2">Register</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/companies.html">Companies</a></li>
-    </ul>
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">Home</a>
+        <a data-toggle="modal" data-target=".bs-example-modal-sm">Login</a>
+        <a data-toggle="modal" data-target=".bs-example-modal-sm2">Register</a>
+        <a href="/about.html">About</a>
+        <a href="/companies.html">Companies</a>  
+    </div>
+    <!-- Open Side Navigation -->
+    <span id="navIcon" onclick="openNav()">&#9776;</span>
     <!-- Audi Image & Page Title & Button-->
     <div style="position: relative;">
-        <img style='width:100%; max-height: 680px;' src="http://img00.deviantart.net/325d/i/2010/161/7/3/audi_r8_in_dark_by_abaddonvolac.jpg">
+        <img class="fade-in one" style='width:100%; max-height: 680px;' src="http://img00.deviantart.net/325d/i/2010/161/7/3/audi_r8_in_dark_by_abaddonvolac.jpg">
         <div id="title">
             <font size="7">Eur-Tune</font>
         </div>
-        <button type="submit" class="startBtn">Get Started</button>
+        <a href="#section1"><img src="arrow.png" class="arrow bounce"></a>
     </div>
     <!-- Login Modal -->
     <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" ng-controller="module.auth.controller as auth">
@@ -65,7 +68,6 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-    <br>
     <!-- Register Modal -->
     <div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" ng-controller="module.auth.controller as auth">
         <div class="modal-dialog modal-sm" role="document">
@@ -96,11 +98,8 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-    <br>
-    <br>
-    <br>
-    <form ng-submit="pCtrl.vehicleRequest()" class="searchForm">
-        <p>Select your vehicle</p>
+    <form ng-submit="pCtrl.vehicleRequest()" class="searchForm" id="section1">
+        <h3>Select your vehicle</h3>
         <!-- Vehicle Make List -->
         <select required="true" name="cars" ng-model="pCtrl.make" ng-change="pCtrl.carMakeDropdown()">
             <option value="" disabled selected>Make</option>
@@ -136,16 +135,11 @@
         <input type="submit">
     </form>
     <!-- Image returned from AJAX request -->
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div ng-show="pCtrl.showVehicleInfo" class="apiImage">
+        <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleImage}}">
+        <!-- <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleInfo.photos[7].sources[0].link.href}}"> -->
+    </div>
     <div id="parts">
-        <div ng-show="pCtrl.showVehicleInfo" class="apiImage">
-            <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleImage}}">
-            <!-- <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleInfo.photos[7].sources[0].link.href}}"> -->
-        </div>
     </div>
     <footer style="text-align: center;">
         <a href="http://www.edmunds.com/?id=apis">
