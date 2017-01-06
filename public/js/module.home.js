@@ -20,6 +20,12 @@ $('#turboInfo').click(function() {
     return false;
 });
 
+window.onload = function() {
+    setTimeout(function() {
+        scrollTo(0, 0);
+    }, 100); //100ms for example
+};
+
 /************************* Home Page Controller ************************************/
 angular.module('module.home', [])
     .controller('performanceController', perfControl)
