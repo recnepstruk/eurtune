@@ -1,5 +1,5 @@
 var Auth = require('./auth'),
-    express = require('express');
+    express = require('express'),
     request = require('request');
 
 
@@ -29,7 +29,7 @@ module.exports = (app) => {
             if (err) {
                 res.send(err);
             } else {
-                console.log(body);
+                // console.log(body);
                 res.send(body);
             }
         });
