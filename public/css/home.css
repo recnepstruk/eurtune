@@ -485,8 +485,13 @@ color: #FF3300;
     font-family: 'Exo 2', sans-serif;
 }
 
+#dashTitle {
+    text-align: center;
+}
+
 .profileBox {
     border: 1px solid white;
+    padding-top: 10px;
 }
 
 #profilePicture {
@@ -496,4 +501,12 @@ color: #FF3300;
     width: 100px;
     margin: auto;
     text-align: center;
+}
+
+#profileAbout {
+    border-top: 1px solid white;
+}
+
+.basicInfo {
+    max-width: 100%;
 }

@@ -15,10 +15,10 @@ $('#arrowScroll').click(function() {
     return false;
 });
 
-$('#turboInfo').click(function() {
-    $("html, body").animate({ scrollTop: 0 }, 1000);
-    return false;
-});
+// $('#turboInfo').click(function() {
+//     $("html, body").animate({ scrollTop: 0 }, 1000);
+//     return false;
+// });
 
 window.onload = function() {
     setTimeout(function() {
@@ -92,7 +92,7 @@ function perfControl($http) { //this function does not belong to an object
         $http.get('/api/myvehicle/photo?make=' + pCtrl.make + '&model=' + pCtrl.model + '&year=' + pCtrl.year)
             .then(function(success) {
                     // console.log("Success: ", success.data);
-                    // pCtrl.make = " ";
+                    pCtrl.make = " ";
                     pCtrl.model = " ";
                     pCtrl.year = " ";
                     console.log(pCtrl.make);

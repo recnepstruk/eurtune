@@ -10,9 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="/js/module.dashboard.js"></script>
+    <script src="/js/module.home.js"></script>
 </head>
 
-<body ng-controller="DashboardController as dashboard" class="container" style="color: white; text-align: center;" id="profilePage">
+<body ng-controller="DashboardController as dashboard" class="container" style="color: white;" id="profilePage">
     <!-- Side Navigation -->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -23,11 +24,32 @@
     <!-- Open Side Navigation -->
     <span id="navIcon" onclick="openNav()">&#9776;</span>
     <br>
-    <h1>Welcome to your dashboard!</h1>
+    <h1 id="dashTitle">Welcome to your dashboard!</h1>
     <div class="profileBox">
         <div id="profilePicture"></div>
-        Upload a profile avatar <br>
+        Upload a profile avatar
+        <br>
         <input type="file" accept="image/*">
+        <br>
+        <br>
+        <div id="profileAbout">
+            <h3>Basic Information</h3>
+            <ul>
+                <section class="basicInfo">Name: Kurt Spencer</section>
+                <br>
+                <section class="basicInfo">Location: Boulder, CO</section>
+                <br>
+                <section class="basicInfo">Interests: Biking, Driving, Eating</section>
+                <br>
+                <section class="basicInfo">Occupation: Speed Racer</section>
+                <br>
+                <section class="basicInfo">Year/Make/Model Car Owned: 2004 VW R32</section>
+                <br>
+                <section class="basicInfo">Bio: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</section>
+            </ul>
+            <h3>Signature</h3>
+            <h3>Activity</h3>
+        </div>
     </div>
 </body>
 
