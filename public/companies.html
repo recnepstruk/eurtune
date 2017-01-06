@@ -9,56 +9,62 @@
     <script src="/js/module.home.js"></script>
 </head>
 
-<body>
-    <ul class="topnav" id="myTopnav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/auth.html">Login</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/companies.html">Companies</a></li>
-    </ul>
-    <div class="companyFont" style="text-align: center;"><h1>List of Top Performance Websites</h1></div>
+<body id="companiesPage">
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">Home</a>
+        <a data-toggle="modal" data-target=".bs-example-modal-sm">Login</a>
+        <a data-toggle="modal" data-target=".bs-example-modal-sm2">Register</a>
+        <a href="/about.html">About</a>
+        <a href="/companies.html">Companies</a>
+    </div>
+    <!-- Open Side Navigation -->
+    <span id="navIcon" onclick="openNav()">&#9776;</span>
+    <div class="companyFont" style="text-align: center;">
+        <h1 style="color: white;">List of Top Performance Websites</h1></div>
     <ul class="list-group companyList">
         <li class="list-group-item">
-            <a href="https://www.ecstuning.com/">ECS Tuning</a>
+            <a class="linkColor" href="https://www.ecstuning.com/">ECS Tuning</a>
         </li>
         <li>
-            <a href="http://www.urotuning.com/">URO Tuning</a>
+            <a class="linkColor" href="http://www.urotuning.com/">URO Tuning</a>
         </li>
         <li>
-            <a href="https://www.esetuning.com/">ESE Tuning</a>
+            <a class="linkColor" href="https://www.esetuning.com/">ESE Tuning</a>
         </li>
         <li>
-            <a href="http://www.uspmotorsports.com/">USP Motorsports</a>
+            <a class="linkColor" href="http://www.uspmotorsports.com/">USP Motorsports</a>
         </li>
         <li>
-            <a href="https://www.etektuning.com/">Etek Tuking</a>
+            <a class="linkColor" href="https://www.etektuning.com/">Etek Tuking</a>
         </li>
         <li>
-            <a href="https://www.fcpeuro.com/">FCP Euro</a>
+            <a class="linkColor" href="https://www.fcpeuro.com/">FCP Euro</a>
         </li>
         <li>
-            <a href="https://www.ngpracing.com/home/">New German Performance</a>
+            <a class="linkColor" href="https://www.ngpracing.com/home/">New German Performance</a>
         </li>
         <li>
-            <a href="http://www.blackforestindustries.com/">Black Forest Industries</a>
+            <a class="linkColor" href="http://www.blackforestindustries.com/">Black Forest Industries</a>
         </li>
         <li>
-            <a href="http://www.awe-tuning.com/">AWE Tuning</a>
+            <a class="linkColor" href="http://www.awe-tuning.com/">AWE Tuning</a>
         </li>
         <li>
-            <a href="https://www.moddedeuros.com/">Modded Euros</a>
+            <a class="linkColor" href="https://www.moddedeuros.com/">Modded Euros</a>
         </li>
         <li>
-            <a href="https://www.neuspeed.com/splash.aspx">Neuspeed</a>
+            <a class="linkColor" href="https://www.neuspeed.com/splash.aspx">Neuspeed</a>
         </li>
         <li>
-            <a href="http://www.eurosportacc.com/">Euro Sport</a>
+            <a class="linkColor" href="http://www.eurosportacc.com/">Euro Sport</a>
         </li>
         <li>
-            <a href="https://store.034motorsport.com/">034 Motorsports</a>
+            <a class="linkColor" href="https://store.034motorsport.com/">034 Motorsports</a>
         </li>
         <li>
-            <a href="http://www.performancebyie.com/">Integrated Engineering</a>
+            <a class="linkColor" href="http://www.performancebyie.com/">Integrated Engineering</a>
         </li>
     </ul>
 </body>

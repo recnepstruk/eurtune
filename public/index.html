@@ -5,6 +5,7 @@
     <title>Eur-Tune</title>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
@@ -18,7 +19,7 @@
     <script src="/js/module.home.js"></script>
 </head>
 
-<body ng-controller="performanceController as pCtrl">
+<body ng-controller="performanceController as pCtrl" id="homePage">
     <!-- Side Navigation -->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -26,7 +27,7 @@
         <a data-toggle="modal" data-target=".bs-example-modal-sm">Login</a>
         <a data-toggle="modal" data-target=".bs-example-modal-sm2">Register</a>
         <a href="/about.html">About</a>
-        <a href="/companies.html">Companies</a>  
+        <a href="/companies.html">Companies</a>
     </div>
     <!-- Open Side Navigation -->
     <span id="navIcon" onclick="openNav()">&#9776;</span>
@@ -36,7 +37,7 @@
         <div id="title">
             <font size="7">Eur-Tune</font>
         </div>
-        <a href="#section1"><img src="arrow.png" class="arrow bounce"></a>
+        <a href="#section1"><img src="arrow.png" class="arrow bounce" ng-click="pCtrl.arrowClick()" id="arrowScroll"></a>
     </div>
     <!-- Login Modal -->
     <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" ng-controller="module.auth.controller as auth">
@@ -98,50 +99,101 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-    <form ng-submit="pCtrl.vehicleRequest()" class="searchForm" id="section1">
-        <h3>Select your vehicle</h3>
-        <!-- Vehicle Make List -->
-        <select required="true" name="cars" ng-model="pCtrl.make" ng-change="pCtrl.carMakeDropdown()">
-            <option value="" disabled selected>Make</option>
-            <option value="audi"> Audi</option>
-            <option value="bmw"> BMW</option>
-            <option value="porsche"> Porsche</option>
-            <option value="volkswagen"> Volkswagen</option>
-        </select>
-        <!-- Audi Model List -->
-        <select required="true" name="audis" ng-model="pCtrl.model" ng-show="pCtrl.audiModel">
-            <option value="" disabled selected>Series</option>
-            <option value="a4"> A4</option>
-        </select>
-        <!-- BMW Model List -->
-        <select required="true" name="bmw" ng-model="pCtrl.model" ng-show="pCtrl.bmwModel">
-            <option value="" disabled selected>Model</option>
-            <option value="e46"> E46 M3</option>
-        </select>
-        <!-- Porsche Model List -->
-        <select required="true" name="porsche" ng-model="pCtrl.model" ng-show="pCtrl.porscheModel">
-            <option value="" disabled selected>Model</option>
-            <option value="911"> 911</option>
-        </select>
-        <!-- VW Model List -->
-        <select required="true" name="volkswagen" ng-model="pCtrl.model" ng-show="pCtrl.volkswagenModel">
-            <option value="" disabled selected>Model</option>
-            <option value="r32"> R32</option>
-        </select>
-        <!-- Year Input -->
-        <input type="text" name="year" placeholder="Year" ng-model="pCtrl.year" required="true" ng-show="pCtrl.showYear">
-        <!--         <input type="text" name="hp" placeholder="Horsepower" ng-model="pCtrl.horsepower" required="true" ng-show="pCtrl.showHP">
+    <div ng-show="pCtrl.showAutoBox">
+        <form ng-submit="pCtrl.vehicleRequest()" class="searchForm" id="section1">
+            <h3 style="color: white;">Select your vehicle</h3>
+            <!-- Vehicle Make List -->
+            <select required="true" name="cars" ng-model="pCtrl.make" ng-change="pCtrl.carMakeDropdown()">
+                <option value="" disabled selected>Make</option>
+                <option value="audi"> Audi</option>
+                <option value="bmw"> BMW</option>
+                <option value="porsche"> Porsche</option>
+                <option value="volkswagen"> Volkswagen</option>
+            </select>
+            <!-- Audi Model List -->
+            <select required="true" name="audis" ng-model="pCtrl.model" ng-show="pCtrl.audiModel">
+                <option value="" disabled selected>Series</option>
+                <option value="a4"> A4</option>
+            </select>
+            <!-- BMW Model List -->
+            <select required="true" name="bmw" ng-model="pCtrl.model" ng-show="pCtrl.bmwModel">
+                <option value="" disabled selected>Model</option>
+                <option value="e46"> E46 M3</option>
+            </select>
+            <!-- Porsche Model List -->
+            <select required="true" name="porsche" ng-model="pCtrl.model" ng-show="pCtrl.porscheModel">
+                <option value="" disabled selected>Model</option>
+                <option value="911"> 911</option>
+            </select>
+            <!-- VW Model List -->
+            <select required="true" name="volkswagen" ng-model="pCtrl.model" ng-show="pCtrl.volkswagenModel">
+                <option value="" disabled selected>Model</option>
+                <option value="r32"> R32</option>
+            </select>
+            <!-- Year Input -->
+            <input type="text" name="year" placeholder="Year" ng-model="pCtrl.year" required="true" ng-show="pCtrl.showYear">
+            <!--         <input type="text" name="hp" placeholder="Horsepower" ng-model="pCtrl.horsepower" required="true" ng-show="pCtrl.showHP">
  -->
-        <input type="submit">
-    </form>
-    <!-- Image returned from AJAX request -->
-    <div ng-show="pCtrl.showVehicleInfo" class="apiImage">
-        <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleImage}}">
-        <!-- <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleInfo.photos[7].sources[0].link.href}}"> -->
-    </div>
-    <div id="parts">
+            <input type="submit">
+        </form>
+        <!-- Image returned from AJAX request -->
+        <div id="apiImgDiv">
+            <div ng-show="pCtrl.showVehicleInfo" class="apiImage">
+                <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleImage}}">
+                <!-- <img src="https://media.ed.edmunds-media.com{{pCtrl.vehicleInfo.photos[7].sources[0].link.href}}"> -->
+            </div>
+            
+        </div>
+        <div id="carTitle"><h3>{{pCtrl.greeting}}</h3></div>
+        <div id="stockParts">
+            <!-- stock images -->
+            <div class="partImages">
+                <a ng-click="pCtrl.openPerfInfo1()"><img src="turbo.png"> </a>
+            </div>
+            <div class="partImages">
+                <a ng-click="pCtrl.openPerfInfo2()"><img src="exhaust.png"> </a>
+            </div>
+            <div class="partImages">
+                <a ng-click="pCtrl.openPerfInfo3()"><img src="intake.png"> </a>
+            </div>
+            <div class="partImages">
+                <a ng-click="pCtrl.openPerfInfo4()"><img src="ecu.png"> </a>
+            </div>
+            <!-- Specific Parts of Each Car -->
+            <div id="turboInfo" ng-show="pCtrl.shape1">
+                <div id="shape1"></div>
+                <div class="dropDownParts"><a href=""><img src="turbo.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="turbo.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="turbo.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="turbo.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+            </div>
+            <div id="exhaustInfo" ng-show="pCtrl.shape2">
+                <div id="shape2"></div>
+                <div class="dropDownParts"><a href=""><img src="exhaust.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="exhaust.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="exhaust.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="exhaust.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="exhaust.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="exhaust.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="exhaust.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+            </div>
+            <div id="intakeInfo" ng-show="pCtrl.shape3">
+                <div id="shape3"></div>
+                <div class="dropDownParts"><a href=""><img src="intake.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="intake.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="intake.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+            </div>
+            <div id="ecuInfo" ng-show="pCtrl.shape4">
+                <div id="shape4"></div>
+                <div class="dropDownParts"><a href=""><img src="ecu.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="ecu.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="ecu.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+                <div class="dropDownParts"><a href=""><img src="ecu.png"></a>This is the information about the exhaust for this car. Most of it will have the same power output.</div>
+            </div>
+        </div>
     </div>
     <footer style="text-align: center;">
+        <p>&nbspCreated by Kurt Spencer</p>
         <a href="http://www.edmunds.com/?id=apis">
             <img src="https://open-api.edmunds.com/api/openapi/v1/logo?size=220&format=horizontal&color=gray&api_key=bfgj98v9kdzm7ukyuxf7srtw">
         </a>

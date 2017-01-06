@@ -4,28 +4,40 @@
 
 #navIcon {
     position: fixed;
-    font-size: 30px; 
+    font-size: 30px;
     cursor: pointer;
     color: white;
     z-index: 1;
     left: 1%;
 }
 
+
 /* The side navigation menu */
+
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Stay on top */
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2;
+    /* Stay on top */
     top: 0;
     left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
 }
 
+
 /* The navigation menu links */
+
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -35,12 +47,17 @@
     transition: 0.3s
 }
 
+
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
+
+.sidenav a:hover,
+.offcanvas a:focus {
     color: #f1f1f1;
 }
 
+
 /* Position and style the close button (top right corner) */
+
 .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -49,17 +66,26 @@
     margin-left: 50px;
 }
 
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
 #main {
     transition: margin-left .5s;
     padding: 20px;
 }
 
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
+
 
 /**********************************************
                 Home Page
@@ -69,57 +95,64 @@ body {
     background-color: black;
 }
 
+#homePage {
+    font-family: 'Exo 2', sans-serif;
+}
+
 /*******Image Fade In On Load********/
+
 @-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @-moz-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .fade-in {
-  opacity: 0;
-  /* make things invisible upon start */
-  -webkit-animation: fadeIn ease-in 1;
-  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation: fadeIn ease-in 1;
-  animation: fadeIn ease-in 1;
-  -webkit-animation-fill-mode: forwards;
-  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-  -moz-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  animation-duration: 1s;
+    opacity: 0;
+    /* make things invisible upon start */
+    -webkit-animation: fadeIn ease-in 1;
+    /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
 }
 
 .fade-in.one {
-  -webkit-animation-delay: 0.7s;
-  -moz-animation-delay: 0.7s;
-  animation-delay: 0.7s;
+    -webkit-animation-delay: 0.7s;
+    -moz-animation-delay: 0.7s;
+    animation-delay: 0.7s;
 }
 
+
 /********Homepage Title*************/
+
 #title {
     font-family: 'Audiowide', sans-serif;
     text-shadow: 4px 4px 4px #aaa;
@@ -127,9 +160,12 @@ body {
     top: 2%;
     left: 50%;
     transform: translateX(-50%);
+    color: white;
 }
 
+
 /*********Bouncing Scroll Arrow*******/
+
 .arrow {
     position: absolute;
     left: 48.3%;
@@ -148,53 +184,74 @@ body {
     transform: scaleX(1.1);
 }
 
+@media (max-width: 414px;
+) {
+    .arrow {
+        display: none;
+    }
+}
+
 @-moz-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-20px);
-    transform: translateY(-20px);
-  }
-  60% {
-    -moz-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    60% {
+        -moz-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
 }
+
 @-webkit-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
-  }
-  60% {
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
 }
+
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-20px);
-    -ms-transform: translateY(-20px);
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
-  }
-  60% {
-    -moz-transform: translateY(-15px);
-    -ms-transform: translateY(-15px);
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
 }
 
 .bounce {
@@ -204,44 +261,43 @@ body {
     animation-delay: 2s;
 }
 
-
 .searchForm {
-    text-align: center;
     margin: 0 auto;
     padding: 10px;
-    /*color: white;*/
-    background-color: orange;
+    max-width: 50em;
+    position: relative;
+    text-align: center;
+    /*background-color: orange;*/
 }
 
 .apiImage {
     position: absolute;
     padding-top: 10px;
-    z-index: 1;
-    margin: 0 auto;
+    /*z-index: 1;*/
+    margin: 10px;
     left: 50%;
+    /*height: 380px;*/
     transform: translateX(-50%);
 }
 
-#about {
-    font-family: 'Exo 2', sans-serif;
-    background-color: gray;
+.partImages {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    margin: 35px;
+    padding: 5px;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.dropDownParts {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    margin: 35px;
     text-align: center;
-    max-width: 50%;
-    margin: 0 auto;
+    color: white;
     padding: 10px;
-}
-
-.companyFont {
-    font-family: 'Exo 2', sans-serif;
-}
-
-.companyList {
-    text-decoration: none;
-    border: 1px solid black;
-    width: 300px;
-    margin: 0 auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 a {
@@ -252,10 +308,116 @@ a {
     text-align: center;
 }
 
-#parts {
+#apiImgDiv {
+    position: relative;
     background-color: black;
-    height: 500px;
-    border: 2px solid white;
+    height: 300px;
+}
+
+#carTitle {
+    color: white;
+    margin: auto;
+    text-align: center;
+    z-index: 2;
+    background-color: black;
+}
+
+#stockParts {
+    position: relative;
+    background-color: #1c1c1c;
+    /*height: 500px;*/
+    cursor: pointer;
+    margin: auto;
+    padding: 20px;
+    max-width: 100%;
+    text-align: center;
+}
+
+#turboInfo {
+    /*height: 200px;*/
+    max-width: 100%;
+    margin: 20px;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    position: relative;
+}
+
+#exhaustInfo {
+    /*height: 200px;*/
+    max-width: 100%;
+    margin: 20px;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    position: relative;
+}
+
+#intakeInfo {
+    /*height: 200px;*/
+    max-width: 100%;
+    margin: 20px;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    position: relative;
+}
+
+#ecuInfo {
+    /*height: 200px;*/
+    max-width: 100%;
+    margin: 20px;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    position: relative;
+}
+
+
+/*************************************/
+
+#shape1 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    transform: rotateZ(-45deg);
+    top: -25px;
+    left: 155px;
+}
+
+#shape2 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    transform: rotateZ(-45deg);
+    top: -25px;
+    left: 435px;
+}
+
+#shape3 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    transform: rotateZ(-45deg);
+    top: -25px;
+    left: 705px;
+}
+
+#shape4 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    transform: rotateZ(-45deg);
+    top: -25px;
+    left: 975px;
 }
 
 footer {
@@ -263,4 +425,75 @@ footer {
     -moz-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
+}
+
+
+/**********************************************
+                Companies Page
+***********************************************/
+
+#companiesPage {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.companyFont {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.companyList {
+    text-decoration: none;
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.linkColor:link {
+color: #fff;
+}
+.linkColor:visited {
+color: #999999;
+}
+.linkColor:hover {
+color: #FF3300;
+}
+
+
+/**********************************************
+                About Page
+***********************************************/
+
+#about {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    font-family: 'Exo 2', sans-serif;
+    background-color: #1c1c1c;
+    text-align: center;
+    max-width: 50%;
+    padding: 10px;
+    color: white;
+}
+
+
+/**********************************************
+                Profile Page
+***********************************************/
+
+#profilePage {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.profileBox {
+    border: 1px solid white;
+}
+
+#profilePicture {
+    background-image: url('/avatars/porschelogo.png');
+    border: 1px solid white;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    text-align: center;
 }

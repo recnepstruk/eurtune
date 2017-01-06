@@ -4,6 +4,7 @@
 <head>
     <title>Eur-Tune</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/home.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
@@ -11,16 +12,23 @@
     <script src="/js/module.dashboard.js"></script>
 </head>
 
-<body ng-controller="DashboardController as dashboard" class="container">
-    <ul class="topnav" id="myTopnav">
-        <li><a href="/">Home</a></li>
-        <li><a ng-click="dCtrl.logout">Logout</a></li>
-        <li><a href="/about.html">About</a></li>
-    </ul>
+<body ng-controller="DashboardController as dashboard" class="container" style="color: white; text-align: center;" id="profilePage">
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/companies.html">Companies</a>
+    </div>
+    <!-- Open Side Navigation -->
+    <span id="navIcon" onclick="openNav()">&#9776;</span>
     <br>
     <h1>Welcome to your dashboard!</h1>
-    Upload a profile picture
-    <input type="file" accept="image/*">
+    <div class="profileBox">
+        <div id="profilePicture"></div>
+        Upload a profile avatar <br>
+        <input type="file" accept="image/*">
+    </div>
 </body>
 
 </html>

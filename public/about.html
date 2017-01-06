@@ -10,14 +10,15 @@
 </head>
 
 <body>
-    <ul class="topnav" id="myTopnav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/auth.html" style="text-decoration: none;">Login</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li class="icon">
-            <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-        </li>
-    </ul>
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/companies.html">Companies</a>
+    </div>
+    <!-- Open Side Navigation -->
+    <span id="navIcon" onclick="openNav()">&#9776;</span>
     <br>
     <div id="about">
     <h1>About Eur-Tune</h1>
