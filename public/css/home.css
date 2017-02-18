@@ -172,7 +172,7 @@ body {
     top: 87%;
     height: 50px;
     width: 50px;
-    transform: translateX(-50%);
+    /*transform: translateX(-50%);*/
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
